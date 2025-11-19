@@ -1,9 +1,10 @@
 """뉴스 데이터 분석 및 반환
 """
 import json
-from typing import Optional, Union, TYPE_CHECKING, TypedDict
+from typing import Union, TYPE_CHECKING, TypedDict
 from news_analysis import NewsDataPipelineAPI
 from news_analysis.service.news_preprocess import NaverNewsContentTDict, NaverNewsApiResultTDict
+from news_analysis.modules.publisher import resolve_publisher
 from ..modules.az_openai import (
     send_conversation_to_openai
 )
@@ -27,8 +28,8 @@ class NaverNewsAnalyzedDict(TypedDict):
             "title": "리벨리온, 美 법인 설립…오라클 출신 임원 영입",
             "content": "리벨리온은 글로벌 시장 공략을 위해 미국에 법인을 설립하고, 오라클 출신 반도체 전문가를 영입했다고 13일 밝혔다.",
             "timeAgo": "1시간 전",
-            "sentiment": "긍정"
-            "
+            "sentiment": "긍정",
+            "publisher": "전자신문"
         },
         ...
     ]
@@ -40,6 +41,7 @@ class NaverNewsAnalyzedDict(TypedDict):
     content: str
     timeAgo: str
     sentiment: str
+    publisher: str
 
 
 class NewsFetchAnalysisService:
@@ -102,16 +104,25 @@ JSON 응답 예시:
 
         analzyed_result: list[NaverNewsAnalyzedDict] = []
         for i, item in enumerate(data):
+            # 감정 
             try:
                 _sentiment = jsonify_sentiment_seq[i]
             except IndexError as e:
                 _sentiment = '중립'
                 logging.error(e)
             
+            # 시간 표시
             try:
                 _time_ago = time_ago(item['pubDate'])
             except Exception as e:
-                _time_ago = 'Unknown Date'
+                _time_ago = 'null'
+                logging.error(e)
+
+            # 방송국명
+            try:
+                _publisher = resolve_publisher(item['originallink']).publisher
+            except Exception as e:
+                _publisher = None
                 logging.error(e)
 
             analzyed_result.append(
@@ -122,9 +133,9 @@ JSON 응답 예시:
                     'title': item['title'],
                     'content': item['content'] if 'content' in item else item.get('description', 'null'),
                     'timeAgo': _time_ago,
-                    'sentiment': _sentiment
+                    'sentiment': _sentiment,
+                    'publisher': _publisher if _publisher else 'null'
                 }
             )
-
         return analzyed_result
 

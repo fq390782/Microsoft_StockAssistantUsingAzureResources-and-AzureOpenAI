@@ -3,8 +3,9 @@
 .vscode/
 
 __queuestorage__/
-__azurite_db_queue_*.json
+__azurite_db_queue__*.json
 __azurite_db_table__.json
+__azurite_db_queue_extent__.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

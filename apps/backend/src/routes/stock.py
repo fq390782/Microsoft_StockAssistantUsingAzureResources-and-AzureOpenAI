@@ -12,7 +12,6 @@ from .models import QueryRequest
 
 router = APIRouter()
 
-
 ## /api/v1/stock/top10
 @router.get("/top10")
 def get_stock_top10(
@@ -22,7 +21,8 @@ def get_stock_top10(
     service = RealtimeStockInfoCacheService(
         redis_client
     )
-    ...
+    data = service.cache_current_top_10_stock()
+    return data
 
 ## /api/v1/stock/realtime
 @router.get("/realtime/{unique_id}")
@@ -50,5 +50,5 @@ def get_stock_history_data(
     service = HistoricalStockDataQueryService(
         sql_client
     )
-    ...
-
+    data = service.query_historical_stock_data(id)
+    return data

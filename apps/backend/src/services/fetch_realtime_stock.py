@@ -6,6 +6,7 @@ from typing import Optional
 from antic_extensions import RedisService
 from .schema_enums import (
     REDIS_STOCK_CURRENT_PRICE,
+    REDIS_STOCK_TOP_10
 )
 from ..settings import api_settings
 import logging
@@ -52,7 +53,17 @@ class RealtimeStockInfoCacheService:
         """현재 TOP10 주식 데이터를 Redis로 부터 가져옵니다.  
 
         """
-        ...
+        data = None
+        try:
+            data = self.redis_client.get(
+                REDIS_STOCK_TOP_10
+            )
+            data = json.loads(data)['items'] # type: ignore
+        except TypeError as e:
+            logging.warning(e)
+        except Exception as e:
+            logging.error(e)
+        return data
         
     def cache_stock_realtime_data(self, stock_unique_id: str):
         """특정 주식 종목에 대한 현재 실시간 주식 데이터를 Redis로 부터 받아옵니다.
@@ -84,6 +95,4 @@ class RealtimeStockInfoCacheService:
                     for k, v in data.items()
                     if k in FILTER_TARGETS}
         return data
-
-
 

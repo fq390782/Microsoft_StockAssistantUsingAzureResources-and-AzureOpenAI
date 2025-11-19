@@ -5,7 +5,7 @@ uvicorn==0.38.0
 gunicorn==23.0.0
 openai==2.8.1
 https://github.com/AnticSignal/stock-hyper-visioning-app/releases/download/v0.1.0_antic_ext/antic_extensions-0.1.0-py3-none-any.whl
-https://github.com/AnticSignal/stock-hyper-visioning-app/releases/download/v0.3.0_news/news_analysis-0.3.0-py3-none-any.whl
+https://github.com/AnticSignal/stock-hyper-visioning-app/releases/download/v0.3.1_news/news_analysis-0.3.1-py3-none-any.whl
 python-multipart
 python-dotenv
 pydantic-settings
