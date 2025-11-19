@@ -1,0 +1,17 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "AnticSignalEventHubName": "kis-volume-rank-5min",
+    "AnticSignalEventHubConnectionString": "",
+    "REDIS_HOST":"your-redis-name.redis.cache.windows.net",
+    "REDIS_PORT": "10000",
+    "REDIS_PASSWORD": "your-access-key",
+    "REDIS_DB": "0",
+    "REDIS_TOP10_KEY": "volume_rank:top10",
+    "PG_HOST": "2dt-1st-team2-postgresql.postgres.database.azure.com",
+    "PG_USER": "anticsignal",
+    "PG_PASSWORD": "",
+    "PG_DATABASE": ""
+  }
+}

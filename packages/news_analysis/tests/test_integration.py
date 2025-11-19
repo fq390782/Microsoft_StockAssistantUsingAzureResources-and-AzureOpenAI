@@ -14,6 +14,6 @@ def test_integration():
     print(result)
     if result:
         FileHandler.save_to_json(
-            result, str(Path("./news_test.json"))
+            result, str(Path("./news_test.json"))   # type: ignore
         )
 

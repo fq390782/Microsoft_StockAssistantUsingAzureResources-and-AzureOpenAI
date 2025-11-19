@@ -53,15 +53,3 @@ class HistoricalStockDataQueryService:
         ...
 
 
-    def query_stock_news_data(
-            self,
-            stock_unique_id: str
-    ):
-        """해당 종목에 대한 뉴스 기분석 데이터를 Query해서 받아온다.  
-        
-        :param stock_unique_id: (str) 주식 종목 코드 입력.  
-
-        """
-        ...
-
-

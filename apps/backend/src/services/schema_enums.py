@@ -14,3 +14,6 @@ REDIS_STOCK_CURRENT_PRICE       = "stock:{id}:current_price"
 REDIS_STOCK_TOP_10              = "volume_rank:top10"
 '''주식 TOP 10 실시간 정보'''
 
+REDIS_NEWS_STOCK                = "news:stock:{name}"
+'''뉴스 주식 캐시   e.g. news:stock:삼성전자'''
+

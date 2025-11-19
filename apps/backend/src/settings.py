@@ -27,6 +27,16 @@ class ApiSettings(BaseSettings):
     REDIS_PASSWORD: Optional[str] = getenv('REDIS_PASSWORD')
     REDIS_DATABASE: int         = 0
 
+    # Naver API
+    NAVER_API_CLIENT_ID: Optional[str]    = getenv('NAVER_API_CLIENT_ID')
+    NAVER_API_SECRET_KEY: Optional[str]   = getenv('NAVER_API_SECRET_KEY')
+
+    # Azure OpenAI
+    AZURE_OPENAI_KEY: Optional[str]         = getenv('AZURE_OPENAI_KEY')
+    AZURE_OPENAI_API_VERSION: Optional[str] = getenv('AZURE_OPENAI_API_VERSION')
+    AZURE_OPENAI_ENDPOINT: Optional[str]    = getenv('AZURE_OPENAI_ENDPOINT')
+    AZURE_OPENAI_MODEL: Optional[str]       = getenv('AZURE_OPENAI_MODEL')
+    AZURE_OPENAI_DEPLOYMENT: Optional[str]  = getenv('AZURE_OPENAI_DEPLOYMENT')
 
 
 api_settings = ApiSettings()

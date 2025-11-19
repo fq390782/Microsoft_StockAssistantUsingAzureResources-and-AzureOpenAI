@@ -12,10 +12,10 @@ app = CoreApp(
     title="AnticSignal Backend API", 
     version="0.1.0"
 )
-app.register_routes()
 app.init_logging(
     development=True
 )
+app.register_routes()
 
 @app.get("/")
 async def root():
