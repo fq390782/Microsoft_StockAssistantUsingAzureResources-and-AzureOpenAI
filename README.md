@@ -1,4 +1,4 @@
-# StockAssistantUsingAzureResources-and-AzureOpenAI
+# Stock-Assistant-Using-AzureResources-and-AzureOpenAI
 개인 투자자의 정보 비대칭과 감정 편향을 줄여주는 클라우드 네이티브 AI 주식 비서
 
 ## 1. 프로젝트 개요 (Project Overview)
@@ -87,4 +87,5 @@
    ```bash
    uvicorn main:app --reload
    ```
+
 
