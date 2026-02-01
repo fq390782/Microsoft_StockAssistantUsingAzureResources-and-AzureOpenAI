@@ -57,7 +57,7 @@
 ## 6. 역활 (Role)
 - **김태진(Project Leader)**: 파이프라인 기획, 증권 API 수집, 비용/특성 분석,인프라 구축, PostgreSQL 스키마 설계, 데이터 분석,뉴스 API 연동, AI 감정 분석 모듈 구현
 
-'## 7. 실행 방법 (Getting Started)
+## 7. 실행 방법 (Getting Started)
 
 ### Prerequisites
 - Python 3.11+
@@ -81,4 +81,5 @@
    ```bash
    uvicorn main:app --reload
    ```
+
 
