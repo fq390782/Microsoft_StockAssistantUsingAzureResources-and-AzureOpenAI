@@ -34,13 +34,11 @@
 
 ## 4. 기술 스택 (Tech Stack)
 
-| 구분 | 기술 |
+| **항목** | **내용** |
 | :--- | :--- |
-| **Infrastructure** | Azure Functions, Event Hubs, App Service, Static Web Apps, Bicep |
-| **Backend** | Python 3.11, FastAPI, SQLAlchemy, Pydantic |
-| **Database** | PostgreSQL, Azure Cache for Redis |
-| **Frontend** | JavaScript (Vanilla), Bootstrap 4, Chart.js |
-| **DevOps** | GitHub Actions (CI/CD), Git, Docker |
+| **Cloud Infra** | [![Azure](https://img.shields.io/badge/Microsoft-Azure-blue?logo=microsoft-azure&style=flat-square)](https://azure.microsoft.com/) [![Azure Functions](https://img.shields.io/badge/Azure-Functions-purple?logo=azure-functions&style=flat-square)](https://azure.microsoft.com/services/functions/) [![Azure OpenAI](https://img.shields.io/badge/Azure-OpenAI-teal?logo=openai&style=flat-square)](https://learn.microsoft.com/azure/cognitive-services/openai/) ![Azure Static Web Apps](https://img.shields.io/badge/Azure%20Static%20Web%20Apps-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) ![Azure Event Hubs](https://img.shields.io/badge/Azure%20Event%20Hubs-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) ![Azure App Service](https://img.shields.io/badge/Azure%20App%20Service-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) |
+| **Backend Development** | [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) |
+| **DevOps / Tools** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white) ![Confluence](https://img.shields.io/badge/Confluence-172B4D?style=flat-square&logo=confluence&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) |
 
 ## 5. 주요 도전 과제 및 해결 (Troubleshooting)
 
@@ -87,5 +85,3 @@
    ```bash
    uvicorn main:app --reload
    ```
-
-
